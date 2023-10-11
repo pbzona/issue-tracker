@@ -3,8 +3,8 @@
 import { AiFillBug } from "react-icons/ai";
 import Link from "next/link";
 import React from "react";
-import { usePathname } from "next/navigation";
 import classNames from "classnames";
+import { usePathname } from "next/navigation";
 
 type NavLink = {
   label: string;
