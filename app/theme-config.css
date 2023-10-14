@@ -1,4 +1,9 @@
+/*
+  Need to use !important here because when the css is loaded in /layout.tsx
+  it is loaded in the correct order, but somewhere in the compiler this file gets appended
+  to the final stylesheet first (probably because it is small and quick to load. I
+  don't know what to do about this and I don't think it's relevant enough to fix.
+*/
 .radix-themes {
-  --default-font-family: --font-inter;
-  --color-background: red;
+  --default-font-family: var(--font-inter) !important;
 }
