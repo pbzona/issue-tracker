@@ -3,7 +3,7 @@
 import "easymde/dist/easymde.min.css";
 import { Button, TextField } from "@radix-ui/themes";
 import React from "react";
-import SimpleMDE from "react-simplemde-editor";
+import SimpleMDE from "react-simplemde-editor"; // eslint-disable-line
 
 let navigator; // eslint-disable-line
 
@@ -13,7 +13,7 @@ const NewIssuePage = () => {
       <TextField.Root>
         <TextField.Input placeholder="Title"/>
       </TextField.Root>
-      <SimpleMDE placeholder="Description"/>
+      {/* <SimpleMDE placeholder="Description"/> */}
       <Button>Submit new issue</Button>
     </div>
   );
