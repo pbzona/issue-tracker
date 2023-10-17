@@ -5,6 +5,8 @@ import { Button, TextField } from "@radix-ui/themes";
 import React from "react";
 import SimpleMDE from "react-simplemde-editor";
 
+let navigator; // eslint-disable-line
+
 const NewIssuePage = () => {
   return (
     <div className="max-w-xl space-y-3">
