@@ -2,10 +2,9 @@
 
 import "easymde/dist/easymde.min.css";
 import { Button, TextField } from "@radix-ui/themes";
-import React from "react";
-import SimpleMDE from "react-simplemde-editor"; // eslint-disable-line
+import React, { Suspense } from "react";
 
-let navigator; // eslint-disable-line
+const SimpleMDE = React.lazy(() => import("react-simplemde-editor"));
 
 const NewIssuePage = () => {
   return (
@@ -13,7 +12,9 @@ const NewIssuePage = () => {
       <TextField.Root>
         <TextField.Input placeholder="Title"/>
       </TextField.Root>
-      {/* <SimpleMDE placeholder="Description"/> */}
+      <Suspense fallback={<div>Loading markdown editor...</div>}>
+        <SimpleMDE placeholder="Description"/>
+      </Suspense>
       <Button>Submit new issue</Button>
     </div>
   );
