@@ -26,6 +26,12 @@
       "error",
       2
     ],
+    "key-spacing": [
+      "error",
+      {
+        "afterColon": true
+      }
+    ],
     "no-console": "warn",
     "no-else-return": "error",
     "no-trailing-spaces": "error",
