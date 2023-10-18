@@ -1,17 +1,8 @@
 "use client";
 
-import "easymde/dist/easymde.min.css";
 import { Button, TextField } from "@radix-ui/themes";
-import React, { Suspense } from "react";
-
-const SimpleMDE = React.lazy(() => {
-  const navigator = window.navigator;
-  if (navigator) {
-    return import("react-simplemde-editor");
-  }
-
-  return new Promise((_, reject) => reject(null));
-});
+import MarkdownEditor from "@/components/markdown-editor";
+import React from "react";
 
 const NewIssuePage = () => {
   return (
@@ -19,9 +10,7 @@ const NewIssuePage = () => {
       <TextField.Root>
         <TextField.Input placeholder="Title"/>
       </TextField.Root>
-      <Suspense fallback={<div>Loading markdown editor...</div>}>
-        <SimpleMDE placeholder="Description"/>
-      </Suspense>
+      <MarkdownEditor changeHandler={() => null}/>
       <Button>Submit new issue</Button>
     </div>
   );
