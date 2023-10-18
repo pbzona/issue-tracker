@@ -4,7 +4,14 @@ import "easymde/dist/easymde.min.css";
 import { Button, TextField } from "@radix-ui/themes";
 import React, { Suspense } from "react";
 
-const SimpleMDE = React.lazy(() => import("react-simplemde-editor"));
+const SimpleMDE = React.lazy(() => {
+  const navigator = window.navigator;
+  if (navigator) {
+    return import("react-simplemde-editor");
+  }
+
+  return new Promise((_, reject) => reject(null));
+});
 
 const NewIssuePage = () => {
   return (
