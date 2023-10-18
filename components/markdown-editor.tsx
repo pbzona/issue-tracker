@@ -4,7 +4,7 @@ import "easymde/dist/easymde.min.css";
 import React, { useCallback, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
 
-const SimpleMDE = dynamic(() => import("react-simplemde-editor"));
+const SimpleMDE = dynamic(() => import("react-simplemde-editor"), { ssr: false });
 
 type MarkdownEditorProps = {
   changeHandler?: (value: string) => void;
